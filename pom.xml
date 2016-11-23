@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>surfacePenFixer</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <name>SurfacePen Fixer for OneNote 2016</name>
     <description>Fixes the bug that the Surface Pen cannot launch OneNote 2016</description>
     <inceptionYear>2016</inceptionYear>
@@ -60,7 +60,7 @@
         <connection>scm:git:git@github.com:vatbub/surfacepenfixer.git</connection>
         <url>https://github.com/vatbub/surfacepenfixer</url>
         <developerConnection>scm:git:git@github.com:vatbub/surfacepenfixer.git</developerConnection>
-        <tag>surfacePenFixer-1.0</tag>
+        <tag>testRelease</tag>
     </scm>
 
     <issueManagement>
