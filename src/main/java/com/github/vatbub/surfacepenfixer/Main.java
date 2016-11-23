@@ -15,12 +15,10 @@ import java.util.logging.Level;
 
 public class Main {
 
-    private static FOKLogger log;
-
     public static void main(String[] args) {
 
         Common.setAppName("surfacepenfixer");
-        log = new FOKLogger(Main.class.getName());
+        FOKLogger log = new FOKLogger(Main.class.getName());
 
         String vbsScriptCopy = Common.getAndCreateAppDataPath() + "focusOnenote.vbs";
         String oneNote;
@@ -38,9 +36,13 @@ public class Main {
             oneNote = "C:\\Program Files\\Microsoft Office\\root\\Office16\\ONENOTE.EXE";
         }
 
+        log.getLogger().info("OneNote path set to: " + oneNote);
+
         try {
             if (isProcessRunning("ONENOTE.EXE")) {
                 // Onenote is already running, create a new page
+
+                log.getLogger().info("OneNote is already running, creating a new page...");
 
                 // Activate Onenote using a vb script
                 // Export vb script
@@ -61,6 +63,7 @@ public class Main {
                 robot.keyRelease(KeyEvent.VK_N);
             } else {
                 // Launch Onenote
+                log.getLogger().info("OneNote is not running yet, launching OneNote...");
                 ProcessBuilder processBuilder = new ProcessBuilder(oneNote);
                 processBuilder.start();
             }
