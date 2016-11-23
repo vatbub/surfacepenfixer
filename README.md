@@ -24,3 +24,5 @@ If you haven't, download the [Surface App](https://www.microsoft.com/de-de/store
 8. Click "Browse"
 9. Go to the folder where you saved the app file in, select it and click ok.
 10. Now click your surface pen button once to see if it works.
+
+Icon made by [Elegant Themes](http://www.flaticon.com/authors/elegant-themes) from [www.flaticon.com](http://www.flaticon.com) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/)
