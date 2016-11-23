@@ -70,11 +70,6 @@
         <url>https://github.com/vatbub/surfacepenfixer/issues</url>
     </issueManagement>
 
-    <ciManagement>
-        <system>Travis CI</system>
-        <url>https://travis-ci.org/vatbub/surfacepenfixer</url>
-    </ciManagement>
-
     <properties>
         <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
         <gitRepoName>surfacepenfixer</gitRepoName>
