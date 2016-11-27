@@ -25,4 +25,7 @@ If you haven't, download the [Surface App](https://www.microsoft.com/de-de/store
 9. Go to the folder where you saved the app file in, select it and click ok.
 10. Now click your surface pen button once to see if it works.
 
+## Compile it yourself
+To compile the code, just clone this repo and run  `mvn package` on the command line. If that command fails, make sure that [Maven](http://maven.apache.org/) is installed on your computer.
+
 Icon made by [Elegant Themes](http://www.flaticon.com/authors/elegant-themes) from [www.flaticon.com](http://www.flaticon.com) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/)
