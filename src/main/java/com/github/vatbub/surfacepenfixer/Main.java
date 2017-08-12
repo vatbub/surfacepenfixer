@@ -21,8 +21,8 @@ package com.github.vatbub.surfacepenfixer;
  */
 
 
-import common.Common;
-import logging.FOKLogger;
+import com.github.vatbub.common.core.Common;
+import com.github.vatbub.common.core.logging.FOKLogger;
 import org.apache.commons.lang.SystemUtils;
 
 import java.awt.*;
@@ -88,12 +88,12 @@ public class Main {
                 ProcessBuilder processBuilder = new ProcessBuilder(oneNote);
                 processBuilder.start();
             }
-        } catch (IOException | InterruptedException |AWTException e) {
+        } catch (IOException | InterruptedException | AWTException e) {
             log.getLogger().log(Level.SEVERE, "An error occurred", e);
         }
     }
 
-    private static boolean isProcessRunning(String processName) throws IOException, InterruptedException {
+    private static boolean isProcessRunning(@SuppressWarnings("SameParameterValue") String processName) throws IOException, InterruptedException {
         ProcessBuilder processBuilder = new ProcessBuilder("tasklist.exe");
         Process process = processBuilder.start();
         String tasksList = toString(process.getInputStream());

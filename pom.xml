@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>surfacePenFixer</artifactId>
@@ -19,27 +20,17 @@
             <url>http://dl.bintray.com/vatbub/fokprojectsReleases</url>
         </repository>
         <repository>
-            <snapshots />
+            <snapshots/>
             <id>snapshots</id>
             <name>libs-snapshot</name>
             <url>https://oss.jfrog.org/artifactory/libs-snapshot</url>
         </repository>
     </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>bintray-vatbub-fokprojectsSnapshots</id>
-            <name>bintray-plugins</name>
-            <url>http://dl.bintray.com/vatbub/fokprojectsSnapshots</url>
-        </pluginRepository>
-    </pluginRepositories>
 
     <parent>
         <groupId>com.github.vatbub</groupId>
         <artifactId>parentPom</artifactId>
-        <version>0.0.21-SNAPSHOT</version>
+        <version>0.0.22-SNAPSHOT</version>
     </parent>
 
     <developers>
@@ -78,7 +69,7 @@
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
         <plugins>
-		<!-- Create the jar-with-dependencies -->
+            <!-- Create the jar-with-dependencies -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -92,7 +83,7 @@
                     </execution>
                 </executions>
             </plugin>
-			
+
             <!-- Build a windows executable -->
             <plugin>
                 <groupId>com.akathist.maven.plugins.launch4j</groupId>
@@ -107,8 +98,12 @@
                         </goals>
                         <configuration>
                             <headerType>gui</headerType>
-                            <jar>${project.build.directory}/${project.artifactId}-${project.version}-jar-with-dependencies.jar</jar>
-                            <outfile>${project.build.directory}/${project.artifactId}-${project.version}-WindowsExecutable.exe</outfile>
+                            <jar>
+                                ${project.build.directory}/${project.artifactId}-${project.version}-jar-with-dependencies.jar
+                            </jar>
+                            <outfile>
+                                ${project.build.directory}/${project.artifactId}-${project.version}-WindowsExecutable.exe
+                            </outfile>
                             <dontWrapJar>false</dontWrapJar>
                             <downloadUrl>https://www.java.com/download/</downloadUrl>
                             <classPath>
@@ -130,7 +125,8 @@
                                 <productName>${project.name}</productName>
                                 <companyName>FOK Projects</companyName>
                                 <internalName>${project.artifactId}</internalName>
-                                <originalFilename>${project.artifactId}-${project.version}-WindowsExecutable.exe</originalFilename>
+                                <originalFilename>${project.artifactId}-${project.version}-WindowsExecutable.exe
+                                </originalFilename>
                             </versionInfo>
                         </configuration>
                     </execution>
@@ -151,7 +147,9 @@
                         <configuration>
                             <artifacts>
                                 <artifact>
-                                    <file>${project.build.directory}/${project.artifactId}-${project.version}-WindowsExecutable.exe</file>
+                                    <file>
+                                        ${project.build.directory}/${project.artifactId}-${project.version}-WindowsExecutable.exe
+                                    </file>
                                     <type>exe</type>
                                     <classifier>WindowsExecutable</classifier>
                                 </artifact>
@@ -171,8 +169,8 @@
         </dependency>
         <dependency>
             <groupId>com.github.vatbub</groupId>
-            <artifactId>common</artifactId>
-            <version>0.0.24-SNAPSHOT</version>
+            <artifactId>common.core</artifactId>
+            <version>0.0.25-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
