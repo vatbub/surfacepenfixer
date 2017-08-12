@@ -39,7 +39,6 @@ public class Main {
     public static void main(String[] args) {
 
         Common.setAppName("surfacepenfixer");
-        FOKLogger log = new FOKLogger(Main.class.getName());
 
         String vbsScriptCopy = Common.getAndCreateAppDataPath() + "focusOnenote.vbs";
         String oneNote;
@@ -47,7 +46,7 @@ public class Main {
         // Onenote path
         // C:\Program Files (x86)\Microsoft Office\root\Office16\ONENOTE.EXE
         // get oneNote location
-        log.getLogger().info("OS Architecture detected as: " + SystemUtils.OS_ARCH);
+        FOKLogger.info(Main.class.getName(), "OS Architecture detected as: " + SystemUtils.OS_ARCH);
 
         if (SystemUtils.OS_ARCH.contains("64")) {
             // 64 bit os
@@ -57,13 +56,13 @@ public class Main {
             oneNote = "C:\\Program Files\\Microsoft Office\\root\\Office16\\ONENOTE.EXE";
         }
 
-        log.getLogger().info("OneNote path set to: " + oneNote);
+        FOKLogger.info(Main.class.getName(), "OneNote path set to: " + oneNote);
 
         try {
             if (isProcessRunning("ONENOTE.EXE")) {
                 // Onenote is already running, create a new page
 
-                log.getLogger().info("OneNote is already running, creating a new page...");
+                FOKLogger.info(Main.class.getName(), "OneNote is already running, creating a new page...");
 
                 // Activate Onenote using a vb script
                 // Export vb script
@@ -84,12 +83,12 @@ public class Main {
                 robot.keyRelease(KeyEvent.VK_N);
             } else {
                 // Launch Onenote
-                log.getLogger().info("OneNote is not running yet, launching OneNote...");
+                FOKLogger.info(Main.class.getName(), "OneNote is not running yet, launching OneNote...");
                 ProcessBuilder processBuilder = new ProcessBuilder(oneNote);
                 processBuilder.start();
             }
         } catch (IOException | InterruptedException | AWTException e) {
-            log.getLogger().log(Level.SEVERE, "An error occurred", e);
+            FOKLogger.log(Main.class.getName(), Level.SEVERE, "An error occurred", e);
         }
     }
 
