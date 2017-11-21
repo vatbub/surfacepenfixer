@@ -25,6 +25,11 @@ If you haven't, download the [Surface App](https://www.microsoft.com/de-de/store
 9. Go to the folder where you saved the app file in, select it and click ok.
 10. Now click your surface pen button once to see if it works.
 
+## A note about anti virus software
+Some anti virus engines recognize this software as a trojan for some reason. If you don't trust the download package from bintray ...
+1. See its report on [VirusTotal](https://www.virustotal.com/#/file/7a7b5d5542ba7acc0af46cad2b99dc3666436f30934e78a446518bf733234ac2/detection)
+2. You are free to browse the source code, clone the repo and compile it for yourself (see below).
+
 ## Compile it yourself
 To compile the code, just clone this repo and run  `mvn package` on the command line. If that command fails, make sure that [Maven](http://maven.apache.org/) is installed on your computer.
 
